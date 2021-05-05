@@ -1,0 +1,207 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SQL Learning - Neeraja</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/neeraja-debta/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/nirjadebta/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										
+									</ul>
+								</header>
+
+
+								<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Questions</h2>
+									</header>
+									<div class="posts">
+										<article>
+											
+											<h3>Q1. Write a SQL statement to prepare a list with salesman name, customer name and their cities for the salesmen and customer who belongs to the same city.</h3>
+											<p>Sample table: salesman</p>
+                                            <p>Sample table: customer</p>
+                                            <h4 style="color: blue"> SELECT  S.name AS Salesman,C.cust_name AS Customer,S.city  FROM salesman S INNER JOIN customer C ON S.city = C.city.</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Q2. Write a SQL statement to make a list with order no, purchase amount, customer name and their cities for those orders which order amount between 500 and 2000.</h3>
+											<p>Sample table: orders</p>
+                                            <p>Sample table: customers</p>
+                                            <h4 style="color: blue"> SELECT O.ord_no,O.purch_amt,C.cust_name,C.city FROM orders O INNER JOIN customer C ON O.customer_id=C.customer_id WHERE O.purch_amt BETWEEN 500 AND 2000.</h4>
+                                        </article>
+                                        <article>
+											
+											<h3>Q3. Write a SQL statement to know which salesman are working for which customer.</h3>
+											<p>Sample table: salesman</p>
+                                            <p>Sample table: customer</p>
+                                            <h4 style="color: blue"> SELECT S.name AS Salesman ,C.cust_name AS Customer FROM salesman S INNER JOIN customer C ON S.salesman_id=C.salesman_id.</h4>
+                                        </article>
+                                        <article>
+											
+											<h3>Q4. Write a SQL statement to find the list of customers who appointed a salesman for their jobs who gets a commission from the company is more than 12%.</h3>
+											<p>Sample table: customer</p>
+                                            <p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> 
+
+                                                SELECT C.cust_name,C.city,S.name,S.commission FROM customer C INNER JOIN salesman S ON C.salesman_id =S.salesman_id WHERE S.commission>0.12;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Q5. Write a SQL statement to find the list of customers who appointed a salesman for their jobs who does not live in the same city where their customer lives, and gets a commission is above 12%</h3>
+											<p>Sample table: salesman</p>
+                                            <p>Sample table: customer</p>
+                                            <h4 style="color: blue"> SELECT C.cust_name, S.name,S.city AS "Salesman City" ,C.city AS "Customer City",S.commission FROM customer C INNER JOIN salesman S ON S.salesman_id = C.salesman_id WHERE (S.city <> C.city AND S.commission >0.12)</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Q6.  Write a SQL statement to find the details of a order i.e. order number, order date, amount of order, which customer gives the order and which salesman works for that customer and how much commission he gets for an order. </h3>
+											<p>Sample table: salesman</p>
+                                            <p>Sample table: customer</p>
+                                            <p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT O.ord_no,O.ord_date,O.purch_amt,C.cust_name,S.name AS Salesman, S.commission FROM orders O INNER JOIN customer C ON C.customer_id = O.customer_id INNER JOIN salesman S ON S.salesman_id = C.salesman_id;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Q7. Write a SQL statement to make a join on the tables salesman, customer and orders in such a form that the same column of each table will appear once and only the relational rows will come.</h3>
+											<p>Sample table: customer</p>
+                                            <h4 style="color: blue"> SELECT * FROM orders NATURAL JOIN customer NATURAL JOIN salesman</h4>
+                                        </article>
+										<article>
+											
+											<h3>Q8. Write a SQL statement to make a list in ascending order for the customer who works either through a salesman or by own.</h3>
+											<p>Sample table: customer</p>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT C.cust_name FROM Customer C LEFT JOIN salesman S ON C.customer_id = S.customer_id ORDER BY C.cust_name</h4>
+                                       
+										</article>
+
+										<article>
+											
+											<h3>Q9. Write a SQL statement to make a list in ascending order for the customer who holds a grade less than 300 and works either through a salesman or by own.</h3>
+											<p>Sample table: customer</p>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT C.cust_name FROM Customer C LEFT JOIN salesman S ON C.salesman_id = S.salesman_id WHERE C.grade < 300 ORDER BY C.cust_name</h4>
+                                       
+										</article>
+
+										<article>
+											
+											<h3>Q10.  Write a SQL statement to make a report with customer name, city, order number, order date, and order amount in ascending order according to the order date to find that either any of the existing customers have placed no order or placed one or more orders.</h3>
+											<p>Sample table: customer</p>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT C.cust_name,C.city,O.ord_num,O.ord_date,O.amt FROM Customer C LEFT JOIN orders O ON C.customer_id = S.customer_id WHERE C.grade < 300 ORDER BY O.ord_date</h4>
+                                       
+										</article>
+
+										<article>
+											
+											<h3>Q11.  Write a SQL statement to make a report with customer name, city, order number, order date, order amount salesman name and commission to find that either any of the existing customers have placed no order or placed one or more orders by their salesman or by own.</h3>
+											<p>Sample table: customer</p>
+											<p>Sample table: orders</p>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT C.cust_name,C.city,O.ord_num,O.ord_date,O.amt,S.name ,S.commission FROM Customer C LEFT JOIN orders O ON C.customer_id = O.customer_id LEFT JOIN salesman S ON  C.salesman_id = S.salesman_id </h4>
+                                       
+										</article>
+
+										<article>
+											
+											<h3>Q12.  Write a SQL statement to make a list in ascending order for the salesmen who works either for one or more customer or not yet join under any of the customers.</h3>
+											<p>Sample table: customer</p>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT S.name FROM salesman S LEFT JOIN customer C ON C.salesman_id = S.salesman_id ORDER BY S.name</h4>
+                                       
+										</article>
+
+										<article>
+											
+											<h3>Q13.  Write a SQL statement to make a list for the salesmen who works either for one or more customer or not yet join under any of the customers who placed either one or more orders or no order to their supplier</h3>
+											<p>Sample table: customer</p>
+											<p>Sample table: salesman</p>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT S.name FROM salesman S LEFT JOIN customer C ON C.salesman_id = S.salesman_id LEDT JOIN orders O ON O.customer_id=C.customer_id.</h4>
+                                       
+										</article>
+
+
+
+
+									</div>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">About Me</a></li>
+										<li><a href="projects.html">Projects</a></li>
+										<li><a href="skills.html">Skills</a></li>
+										<li><a href="learning.html">Blogs</a></li>
+										<li><a href="images/resume/Resume.pdf">Resume</a></li>
+										<li><a href="certifications.html">Certifications</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">nirjadebta9@gmail.com</a></li>
+										<li class="icon solid fa-phone">(614) 717-3354</li>
+										<li class="icon solid fa-home">Franklin University, Columbus</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

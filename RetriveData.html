@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SQL Learning - Neeraja</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/neeraja-debta/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/nirjadebta/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										
+									</ul>
+								</header>
+
+
+								<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Questions</h2>
+									</header>
+									<div class="posts">
+										<article>
+											
+											<h3>Write a SQL statement to find those salesmen with all information who come from the city either Paris or Rome</h3>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT * FROM salesman WHERE city = Paris OR city = ROME.</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a query to filter those salesmen with all information who comes from any of the cities Paris and Rome</h3>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT * FROM salesman WHERE City IN ('Paris','Rome').</h4>
+                                        </article>
+                                        <article>
+											
+											<h3>Write a query to produce a list of salesman_id, name, city and commission of each salesman who live in cities other than Paris and Rome</h3>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT salesman_id,name,city,commission FROM salesman WHERE City NOT IN ('Paris','Rome').</h4>
+                                        </article>
+                                        <article>
+											
+											<h3>Write a query to sort out those customers with all information whose ID value is within any of 3007, 3008 and 3009.</h3>
+											<p>Sample table: customer</p>
+                                            <h4 style="color: blue"> SELECT * FROM customer WHERE customer_id  IN (3007,3008,3009).</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement to find those salesmen with all information who gets the commission within a range of 0.12 and 0.14.</h3>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT * FROM salesman WHERE commision  BETWEEN 0.12 AND 0.14</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a query to filter all those orders with all information which purchase amount value is within the range 500 and 4000 except those orders of purchase amount value 948.50 and 1983.43. </h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT * FROM orders WHERE (purch_amount  BETWEEN 500 AND 4000) AND (purch_amount NOT IN (948.50,1983.43))</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement to find that customers whose name begin with the letter 'B'.</h3>
+											<p>Sample table: customer</p>
+                                            <h4 style="color: blue"> SELECT * FROM customer WHERE name LIKE B%</h4>
+                                        </article>
+										<article>
+                                            
+										
+                                            
+			                                
+											
+										
+											
+											<h3>Logistic Regression</h3>
+											<p>Constructed a model that can look at the labeled sentiment for a given tweet and figure out what word or phrase of the tweet that best supports it.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Sentiment-Span-Extraction-Using-Transformer-Models" class="button">Model</a></li>
+											</ul>
+										</article>
+										<article>
+										
+											<h3>Decision Tree</h3>
+											<p>Accurately detect wheat heads from outdoor images of wheat plants, using wheat datasets from around the globe.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Wheat-Detection-FasterRCNN-PyTorch" class="button">Model</a></li>
+											</ul>
+										</article>
+										<article>
+											
+											<h3>Random Forest</h3>
+											<p>90+ SQL solutions to LeetCode database questions (Work in Progress)</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/sql-leetcode" class="button">Model</a></li>
+											</ul>
+										</article>
+										<article>
+											
+											<h3>Cross Validation</h3>
+											<p>Solved the UFLP, SCLP, MCLP facility location problems using Python linear optimization library PuLP</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/facility_location_model" class="button">Model</a></li>
+											</ul>
+										</article>
+										<article>
+											
+											<h3>Regularization</h3>
+											<p>Extract tweets from twitter for different combinations of topics and implement an ensemble of classifier chains to extract all the topics a user is talking about in a tweet.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Multi-Label-Classification-Twitter-Tweets" class="button">Model</a></li>
+											</ul>
+										</article>
+										<article>
+											
+											<h3>Naive Bayes</h3>
+											<p>Identify toxicity in wikipedia talk page comments in several different languages with english-only training data.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/BERT-Multilingual-Toxic-Comment-Classification-TPU" class="button">Model</a></li>
+											</ul>
+										</article>										
+										<article>
+											<a href="#" class="image"><img src="images/stacking.PNG" alt="" /></a>
+											<h3>Stacked Generalization Framework</h3>
+											<p>Model ensembling is a very powerful technique to increase accuracy on a variety of ML tasks. Implemented Stacked Generalization framework by pooling base classifiers, then using another classifier to combine their predictions.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Stacking-Framework" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/tokenizers.png" alt="" /></a>
+											<h3>Tokenizers</h3>
+											<p>Exploring ByteLevelBPETokenizer and SentencePieceTokenizer.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/ByteLevelBPETokenizer-vs-SentencePieceTokenizer" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/insurance.jpg" alt="" /></a>
+											<h3>Allstate Insurance Claims</h3>
+											<p>Predict the severity of an insurance claim.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Allstate-Insurance" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/credit-card.png" alt="" /></a>
+											<h3>Credit Card Fraud Detection</h3>
+											<p>Recognize fraudulent credit card transactions so that customers are not charged for items that they did not purchase.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Credit-Card-Fraud-Detection" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/green-taxi.jpg" alt="" /></a>
+											<h3>NYC Green Taxi Analysis</h3>
+											<p>Study and visualize the taxi data, engineer new features, and built a predictive model for tip as a percentage of the total fare based on features like trip coordinates or pickup date and time.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/NYC-Green-Taxi" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/hotel-reviews.png" alt="" /></a>
+											<h3>Sentiment Analysis for Hotel Reviews</h3>
+											<p>Performed analysis of real hotel review data crawled from the Tripadvisor website to automatically identify positive and negative keywords and phrases associated with hotels.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Natural-Language-Processsing-Hotel-Reviews" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/recommender-systems.png" alt="" /></a>
+											<h3>Recommender Engine With Collaborative Filtering</h3>
+											<p>Exploring Collaborative filtering - a technique that can filter out items that a user might like on the basis of reactions by similar users.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/MovieLens-Recommender-Systems" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/amazon.jpg" alt="" /></a>
+											<h3>Amazon Reviews Classification</h3>
+											<p>Classified consumer reviews for Amazon products using Multinomial Naive Bayes, LSTM, GRU, and Bidirectional RNN.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Amazon-Reviews-Classification" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/keras-text.png" alt="" /></a>
+											<h3>Keras - Deep learning for Text</h3>
+											<p>Understanding Keras at a high level and train a small neural network to classify text.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Deep-learning-for-Text-Keras" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/keras-conv.jpeg" alt="" /></a>
+											<h3>Keras - Deep learning for Computer Vision</h3>
+											<p>Understanding Keras at a high level and train a small neural network to classify images.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Deep-learning-for-Computer-Vision-Keras" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/google-play.jpg" alt="" /></a>
+											<h3>Google Play Store Apps</h3>
+											<p>Understanding the android market using Plotly.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Google-Play-Store-Apps" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="images/sentimentanalysis.jpg" alt="" /></a>
+											<h3>Sentiment Analysis Twitter</h3>
+											<p>Analyzing tweets of five political parties during canada federal election 2015.</p>
+											<ul class="actions">
+												<li><a href="https://github.com/apalle1/Sentiment-Analysis-Twitter" class="button">More</a></li>
+											</ul>
+										</article>
+									</div>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">About Me</a></li>
+										<li><a href="projects.html">Projects</a></li>
+										<li><a href="skills.html">Skills</a></li>
+										<li><a href="learning.html">Blogs</a></li>
+										<li><a href="images/resume/Resume.pdf">Resume</a></li>
+										<li><a href="certifications.html">Certifications</a></li>
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">apalle1@tamu.edu</a></li>
+										<li class="icon solid fa-phone">(979) 209-9153</li>
+										<li class="icon solid fa-home">College Station, Texas</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
