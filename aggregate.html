@@ -1,0 +1,233 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SQL Learning - Neeraja</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/neeraja-debta/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/nirjadebta/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										
+									</ul>
+								</header>
+
+
+								<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Questions</h2>
+									</header>
+									<div class="posts">
+										<article>
+											
+											<h3>Write a SQL statement to find the total purchase amount of all orders.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT SUM (purch_amt) FROM orders.</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement to find the average purchase amount of all orders.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT AVG (purch_amt) FROM orders.</h4>
+                                        </article>
+                                        <article>
+											
+											<h3>Write a SQL statement to find the number of salesmen currently listing for all of their customers.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT COUNT (DISTINCT salesman_id) FROM orders.</h4>
+                                        </article>
+                                        <article>
+											
+											<h3>Write a SQL statement to know how many customers have listed their names</h3>
+											<p>Sample table: customer</p>
+                                            <h4 style="color: blue"> SELECT count(customer_id) FROM customer </h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement find the number of customers who gets at least a gradation for his/her performance.</h3>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT COUNT (customer_id) FROM customer where grade IS NOT NULL;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement to get the maximum purchase amount of all the orders.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT MAX (purch_amt) FROM orders</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement which selects the highest grade for each of the cities of the customers..</h3>
+											<p>Sample table: customer</p>
+                                            <h4 style="color: blue"> SELECT max(grade),city FROM customer GROUPBY city</h4>
+                                        </article>
+										
+                                        <article>
+											
+											<h3>Write a SQL statement to find the highest purchase amount ordered by the each customer with their ID and highest purchase amount.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT customer_id,MAX(purch_amt) FROM orders GROUP BY customer_id;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement to find the highest purchase amount ordered by the each customer on a particular date with their ID, order date and highest purchase amount</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT customer_id,ord_date,MAX(purch_amt) FROM orders GROUP BY customer_id,ord_date;</h4>
+                                        </article>
+                                        
+                                        <article>
+											
+											<h3>Write a SQL statement to find the highest purchase amount on a date '2012-08-17' for each salesman with their ID</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT salesman_id,MAX(purch_amt) FROM orders WHERE ord_date = '2012-08-17' GROUP BY salesman_id;</h4>
+                                        </article>
+                                        
+                                        <article>
+											
+											<h3> Write a SQL statement to find the highest purchase amount with their ID and order date, for only those customers who have highest purchase amount in a day is more than 2000</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT customer_id,ord_date,MAX(purch_amt) FROM orders GROUP BY customer_id,ord_date HAVING MAX(purch_amt)>2000.00</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3> Write a SQL statement to find the highest purchase amount with their ID and order date, for those customers who have a higher purchase amount in a day is within the range 2000 and 6000.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT customer_id,ord_date,MAX(purch_amt) FROM orders GROUP BY customer_id,ord_date HAVING MAX(purch_amt) BETWEEN 2000 AND 6000;</h4>
+                                        </article>
+										
+                                        <article>
+											
+											<h3> Write a SQL statement to find the highest purchase amount with their ID and order date, for only those customers who have a higher purchase amount in a day is within the list 2000, 3000, 5760 and 6000.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT customer_id,ord_date,MAX(purch_amt) FROM orders GROUP BY customer_id,ord_date HAVING MAX(purch_amt) IN(2000 ,3000,5760, 6000);</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3> Write a SQL statement to find the highest purchase amount with their ID, for only those customers whose ID is within the range 3002 and 3007.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT customer_id,MAX(purch_amt) FROM orders WHERE customer_id BETWEEN 3002 and 3007 GROUP BY customer_id;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement to display customer details (ID and only highest purchase amount) whose IDs are within the range 3002 and 3007 and highest purchase amount is more than 1000.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT customer_id,MAX(purch_amt) FROM orders WHERE customer_id BETWEEN 3002 and 3007 GROUP BY customer_id HAVING MAX(purch_amt)>1000;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement to find the highest purchase amount with their ID, for only those salesmen whose ID is within the range 5003 and 5008.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT salesman_id,MAX(purch_amt) FROM orders  WHERE salesman_id BETWEEN 5003 AND 5008 GROUP BY salesman_id;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement that counts all orders for a date August 17th, 2012.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT COUNT(ord_id) FROM orders WHERE ord_date='2012-08-17';</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a SQL statement that count the number of salesmen for whom a city is specified. Note that there may be spaces or no spaces in the city column if no city is specified.</h3>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT COUNT(id) FROM salesman WHERE city IS NOT NULL;</h4>
+                                        </article>
+
+                                        
+                                        <article>
+											
+											<h3>Write a query that counts the number of salesmen with their order date and ID registering orders for each day.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT ord_date,salesman_id,COUNT(salesman_id) FROM orders GROUP BY ord_date,salesman_id;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Write a query that counts the number of salesmen with their order date and ID registering orders for each day.</h3>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT ord_date,salesman_id,COUNT(salesman_id) FROM orders GROUP BY ord_date,salesman_id;</h4>
+                                        </article>
+
+
+									</div>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">About Me</a></li>
+										<li><a href="projects.html">Projects</a></li>
+										<li><a href="skills.html">Skills</a></li>
+										
+										<li><a href="images/resume/Resume.pdf">Resume</a></li>
+									
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">nirjadebta9@gmail.com</a></li>
+										<li class="icon solid fa-phone">(614) 717-3354</li>
+										<li class="icon solid fa-home">Franklin University, Columbus</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
