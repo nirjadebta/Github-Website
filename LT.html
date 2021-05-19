@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>SQL Learning - Neeraja</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<ul class="icons">
+										<li><a href="https://www.linkedin.com/in/neeraja-debta/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<li><a href="https://github.com/nirjadebta/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+										
+									</ul>
+								</header>
+
+
+								<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Questions</h2>
+									</header>
+									<div class="posts">
+										<article>
+											
+											<h3>Q1. Write an SQL query to find the type of weather in each country for November 2019.
+
+                                                The type of weather is Cold if the average weather_state is less than or equal 15, Hot if the average weather_state is greater than or equal 25 and Warm otherwise. </h3>
+											<p>Sample table: countries</p>
+                                            <p>Sample table: weather</p>
+                                            <h4 style="color: blue"> 
+                                                Select c.country_name, 
+                                                case when avg(w.weather_state)<=15 then 'Cold'
+                                                    when avg(w.weather_state)>=25 then 'Hot'
+                                                else 'Warm'
+                                                end as weather_type
+                                                from weather w join
+                                                countries c
+                                                on w.country_id = c.country_id
+                                                where month(day) = 11 AND year(day)=2019
+                                                group by c.country_id.</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Q2. Write a SQL statement to find the names of all customers along with the salesmen who works for them</h3>
+											<p>Sample table: salesman</p>
+                                            <p>Sample table: customer</p>
+                                            <h4 style="color: blue"> SELECT customer.cust_name, salesman.name FROM customer,salesman WHERE salesman.salesman_id = customer.salesman_id;.</h4>
+                                        </article>
+                                        <article>
+											
+											<h3>Q3. Write a SQL statement to display all those orders by the customers not located in the same cities where their salesmen live</h3>
+											<p>Sample table: salesman</p>
+											<p>Sample table: customer</p>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT ord_no, cust_name, orders.customer_id, orders.salesman_id FROM salesman, customer, orders WHERE customer.city <> salesman.city AND customer.salesman_id = salesman.salesman_id AND orders.customer_id = customer.customer_id ;</h4>
+                                        </article>
+                                        <article>
+											
+											<h3>Q4. Write a SQL statement that finds out each order number followed by the name of the customers who made the order.</h3>
+											<p>Sample table: customer</p>
+											<p>Sample table: orders</p>
+                                            <h4 style="color: blue"> SELECT orders.ord_num,customer.cust_name FROM customer,orders WHERE customer.customer_id=orders.customer_id ;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Q5. Write a SQL statement that sorts out the customer and their grade who made an order. Each of the customers must have a grade and served by at least a salesman, who belongs to a city.</h3>
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue">SELECT customer.cust_name AS "Customer", customer.grade AS "Grade" FROM orders, salesman, customer WHERE orders.customer_id = customer.customer_id
+												AND orders.salesman_id = salesman.salesman_id AND salesman.city IS NOT NULL AND customer.grade IS NOT NULL;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Q6. Write a query that produces all customers with their name, city, salesman and commission, who served by a salesman and the salesman works at a rate of the commission within 12% to 14%.</h3>
+											<p>Sample table: customer</p>
+
+											<p>Sample table: salesman</p>
+                                            <h4 style="color: blue"> SELECT customer.cust_name AS "Customer", customer.city AS "City", salesman.name AS "Salesman", salesman.commission FROM customer,salesman
+												WHERE customer.salesman_id = salesman.salesman_id AND salesman.commission BETWEEN .12 AND .14;</h4>
+                                        </article>
+
+                                        <article>
+											
+											<h3>Q7. Write a SQL statement that produces all orders with the order number, customer name, commission rate and earned commission amount for those customers who carry their grade is 200 or more and served by an existing salesman.</h3>
+											<p>Sample table: customer</p>
+                                            <h4 style="color: blue"> SELECT ord_no, cust_name, commission AS "Commission%", purch_amt*commission AS "Commission" FROM salesman,orders,customer WHERE orders.customer_id = customer.customer_id AND orders.salesman_id = salesman.salesman_id AND customer.grade>=200;</h4>
+                                        </article>
+										
+									</div>
+								</section>
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							<!-- Menu -->
+								<nav id="menu">
+									<header class="major">
+										<h2>Menu</h2>
+									</header>
+									<ul>
+										<li><a href="index.html">About Me</a></li>
+										<li><a href="projects.html">Projects</a></li>
+										<li><a href="skills.html">Skills</a></li>
+										
+										<li><a href="images/resume/Resume.pdf">Resume</a></li>
+									
+									</ul>
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Get in touch</h2>
+									</header>
+									<ul class="contact">
+										<li class="icon solid fa-envelope"><a href="#">nirjadebta9@gmail.com</a></li>
+										<li class="icon solid fa-phone">(614) 717-3354</li>
+										<li class="icon solid fa-home">Franklin University, Columbus</li>
+									</ul>
+								</section>
+
+							<!-- Footer -->
+								<footer id="footer">
+									<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+								</footer>
+
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
